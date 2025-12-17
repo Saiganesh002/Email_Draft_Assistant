@@ -1,0 +1,6 @@
+Hello [Recipient Name],
+
+I would like to schedule a meeting to discuss [topic]. Please let me know your availability.
+
+Thanks,
+[Your Name]
