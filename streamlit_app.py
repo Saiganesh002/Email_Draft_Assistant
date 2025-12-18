@@ -96,13 +96,22 @@ Tone: {tone}
 
 Requirements:
 - Use fetch_email_template tool as inspiration and expand moderately
+- MUST start with "Subject: [relevant subject line]"
+- Then add a blank line
+- Then start with "Dear {recipient_name},"
 - Write 2-3 concise paragraphs with 2-3 sentences each
 - Keep it professional but brief - around 100-150 words
-- Include subject line, greeting, body, and signature
-- Start with "Dear {recipient_name},"
 - End with "Best regards," then "{sender_name}" on next line
 - Focus specifically on: {user_query}
 - Be clear, direct, and professional
+
+Format example:
+Subject: [Subject Line]
+
+Dear [Name],
+[Email body]
+Best regards,
+[Sender]
 
 CRITICAL: Templates are just basic structures - CREATE MUCH MORE DETAILED CONTENT.
 IMPORTANT: Return ONLY the final email text, no explanations or reasoning.
@@ -140,6 +149,12 @@ IMPORTANT: Return ONLY the final email text, no explanations or reasoning.
                 pattern = r'(Best regards|Sincerely|Thanks|Regards|Kind regards),\s*' + re.escape(sender_name)
                 response = re.sub(pattern, r'\1,\n' + sender_name, response, flags=re.IGNORECASE)
 
+            # Ensure subject line is present
+            if not response.strip().startswith("Subject:"):
+                # Add subject line if missing
+                subject_line = f"Subject: Re: {user_query.title()}"
+                response = f"{subject_line}\n\n{response}"
+            
             # Ensure minimum content and proper structure
             lines = [line for line in response.split("\n") if line.strip()]
             if len(lines) < 8:  # Reduced minimum requirement for shorter emails
