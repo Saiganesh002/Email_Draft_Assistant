@@ -1,6 +1,8 @@
-Dear [Client Name],
+Dear [Recipient Name],
 
-I hope this message finds you well. I wanted to follow up regarding our previous discussion about the project status. Please let me know if there are any updates or next steps.
+I hope this message finds you well. I wanted to follow up regarding our previous discussion on the project status.
+
+Please let me know if there are any updates or next steps. I would be happy to connect if further discussion is required.
 
 Best regards,
 [Your Name]

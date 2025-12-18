@@ -1,6 +1,8 @@
-Hello [Recipient Name],
+Dear [Recipient Name],
 
-I would like to schedule a meeting to discuss [topic]. Please let me know your availability.
+I hope this message finds you well. I would like to schedule a meeting to discuss [topic] and align on the next steps.
 
-Thanks,
+Please let me know if you are available at the proposed time, or feel free to suggest an alternative that works better for you.
+
+Best regards,
 [Your Name]
