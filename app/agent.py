@@ -1,8 +1,6 @@
-import os
 from dotenv import load_dotenv
-
 from langchain.agents import initialize_agent, AgentType
-from langchain_openai import ChatOpenAI
+from app.llm import get_llm
 from app.tools import fetch_email_template
 
 # Load environment variables
@@ -10,11 +8,7 @@ load_dotenv()
 
 
 def get_email_agent():
-    llm = ChatOpenAI(
-        model="gpt-3.5-turbo",
-        temperature=0.5,  # slightly lower = less overthinking
-        openai_api_key=os.getenv("OPENAI_API_KEY")
-    )
+    llm = get_llm()
 
     tools = [fetch_email_template]
 
